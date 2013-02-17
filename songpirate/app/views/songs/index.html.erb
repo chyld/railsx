@@ -1,0 +1,13 @@
+<%= link_to('New Song', new_song_path) %>
+
+<ol>
+  <% @songs.each do |song| %>
+    <li>
+      <ul>
+        <li><%= song.name %></li>
+        <li><%= audio_tag(song.filename, :controls => true) %></li>
+        <li><%= image_tag(song.image) %></li>
+      </ul>
+    </li>
+  <% end %>
+</ol>
