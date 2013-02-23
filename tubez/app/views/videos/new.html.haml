@@ -1,1 +1,7 @@
-%h1 new
+.row
+  .four.columns
+    = form_tag videos_new_path do
+      = label_tag 'video'
+      = text_field_tag 'video', nil, :autofocus => true
+      = submit_tag 'Search Videos', :class => 'button radius'
+  .eight.columns

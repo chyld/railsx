@@ -1,0 +1,3 @@
+%ul
+  - @videos.each do |video|
+    %li= render(:partial => 'youtube', :locals => {:url => video.url})
