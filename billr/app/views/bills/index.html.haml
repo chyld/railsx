@@ -1,0 +1,13 @@
+%h1= "Bills for #{@auth.email}"
+%h5
+  The total is :
+  = number_to_currency(@auth.bills.map(&:amount).reduce(:+))
+= link_to('New Bill', new_bill_path, :class => 'button tiny radius success')
+%ol
+  - @bills.each do |bill|
+    %li
+      %ul
+        %li= bill.name
+        %li= bill.description
+        %li= number_to_currency(bill.amount)
+        %li= "The bill is due on the #{bill.day.ordinalize} of the month."
