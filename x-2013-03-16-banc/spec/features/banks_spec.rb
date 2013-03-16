@@ -15,4 +15,13 @@ describe 'Banks' do
       page.should have_button('Create Bank')
     end
   end
+
+  describe 'JS cancel_form()' do
+    it 'removes the Bank form', :js => true do
+      visit banks_path
+      click_link('New')
+      click_link('Cancel')
+      page.should_not have_button('Create Bank')
+    end
+  end
 end
