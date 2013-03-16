@@ -1,2 +1,4 @@
 = link_to('New', new_bank_path, :remote => true, :class => 'button tiny radius')
 #form
+%ol#banks
+  = render(:partial => 'list')

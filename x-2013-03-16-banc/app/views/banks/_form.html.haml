@@ -1,6 +1,6 @@
 .row
   .large-3.columns
-    = form_for @bank do |f|
+    = form_for @bank, :remote => true do |f|
       = f.label :name
       = f.text_field :name, :autofocus => true
       = link_to_function('Cancel', 'clear_form()', :class => 'button tiny radius alert')
