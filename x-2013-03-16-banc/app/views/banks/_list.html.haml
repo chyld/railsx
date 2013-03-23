@@ -1,2 +1,4 @@
 - @banks.each do |bank|
-  %li= link_to(bank.name, bank, :class => 'button tiny radius success')
+  %tr
+    %td= link_to(bank.name, bank, :class => 'button tiny radius success')
+    %td= bank.transactions.count
