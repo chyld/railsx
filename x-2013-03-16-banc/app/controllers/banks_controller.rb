@@ -13,5 +13,8 @@ class BanksController < ApplicationController
   end
 
   def show
+    bank = Bank.find(params[:id])
+    @deposits = bank.transactions.where('amount >= 0').order(:created_at)
+    @withdrawals = bank.transactions.where('amount < 0').order(:created_at)
   end
 end

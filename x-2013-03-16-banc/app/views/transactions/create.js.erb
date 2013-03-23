@@ -1,0 +1,7 @@
+$('#form').empty();
+var dh = $('#deposits tr:nth-child(1)').detach();
+var wh = $('#withdrawals tr:nth-child(1)').detach();
+$('#deposits').empty().append(dh);
+$('#withdrawals').empty().append(wh);
+$('#deposits').append('<%=j render(:partial => 'shared/transaction', :collection => @deposits, :as => :t) %>');
+$('#withdrawals').append('<%=j render(:partial => 'shared/transaction', :collection => @withdrawals, :as => :t) %>');

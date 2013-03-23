@@ -5,6 +5,7 @@
       = f.number_field :amount, :autofocus => true, :placeholder => '5'
       = f.label :memo
       = f.text_field :memo
+      = hidden_field_tag :bank_id, params[:bank_id]
       = link_to_function('Cancel', 'clear_form()', :class => 'button tiny radius alert')
       = f.submit nil, :class => 'button tiny radius success'
   .large-9.columns

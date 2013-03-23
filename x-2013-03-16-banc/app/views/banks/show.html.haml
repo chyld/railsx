@@ -1,2 +1,16 @@
-= link_to('New Transaction', new_transaction_path, :remote => true, :class => 'button tiny radius')
+= link_to('New Transaction', new_transaction_path(:bank_id => params[:id]), :remote => true, :class => 'button tiny radius')
 #form
+%h5 Deposits
+%table#deposits
+  %tr
+    %th Amount
+    %th Memo
+    %th Date
+  = render(:partial => 'shared/transaction', :collection => @deposits, :as => :t)
+%h5 Withdrawals
+%table#withdrawals
+  %tr
+    %th Amount
+    %th Memo
+    %th Date
+  = render(:partial => 'shared/transaction', :collection => @withdrawals, :as => :t)
