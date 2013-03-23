@@ -11,12 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316142712) do
+ActiveRecord::Schema.define(:version => 20130323135938) do
 
   create_table "banks", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.decimal  "amount"
+    t.string   "memo"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "bank_id"
   end
 
 end

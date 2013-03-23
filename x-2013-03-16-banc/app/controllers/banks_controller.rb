@@ -11,4 +11,7 @@ class BanksController < ApplicationController
     Bank.create(params[:bank])
     @banks = Bank.order(:name)
   end
+
+  def show
+  end
 end
